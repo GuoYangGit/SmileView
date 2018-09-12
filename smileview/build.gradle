@@ -25,11 +25,24 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
 }
 
+allprojects {
+    repositories {
+        jcenter()
+    }
+    //加上这些
+    tasks.withType(Javadoc) {
+        options{ encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
+}
+
 publish{
     userOrg = 'guoyanggit'
     groupId = 'com.guoyanggit'
     artifactId = 'smileview'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'this is smileview for android'
     website = 'https://github.com/GuoYangGit/SmileView'
 }
